@@ -102,6 +102,18 @@ class LinkedStackTest {
             assertEquals(i - 1, intStack.pop());
         }
         assertTrue(intStack.isEmpty());
+
+        // now with strings!
+        for (int i = 0; i < stackSize; i++) {
+            strStack.push("" + i);
+            assertEquals("" + i, strStack.top());
+            assertEquals(i + 1, strStack.size());
+        }
+
+        for (int i = stackSize; i > 0; i--) {
+            assertEquals("" + (i - 1), strStack.pop());
+        }
+        assertTrue(strStack.isEmpty());
     }
 
     @Test
